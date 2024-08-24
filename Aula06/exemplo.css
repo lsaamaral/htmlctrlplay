@@ -1,0 +1,33 @@
+div ~ p {
+    background-color: green;
+}
+
+p::first-letter {font-size: 4em;}
+
+li:nth-child(2){
+	color: #ff0000;
+}
+
+li:nth-child(odd){
+	color: green;
+}
+
+tr:nth-child(even){
+	background-color :orange;
+	color: black;
+}
+
+tr:nth-child(odd){
+	background-color :blue;
+	color: white;
+}
+
+table{
+	width: 50%;
+	
+}
+
+
+td{
+	text-align: center;
+}
