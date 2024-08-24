@@ -1,0 +1,11 @@
+#imagem{
+	opacity: 1;
+}
+
+#imagem:hover {
+	opacity: 0;
+}
+
+img {
+    filter: grayscale(100%);
+}
