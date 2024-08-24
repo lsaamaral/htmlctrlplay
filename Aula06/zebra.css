@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+table h2 {
+   color: orange;
+}
+
+/*
+div > p{
+  background-color: blue;
+}
+*/
+#ProximoParagrafo + p{
+  font-size: 3em;
+}
+
+div ~ p{
+  background-color: green;
+}
+
+table {
+  border-collapse: separate;
+  margin-top: -8px;
+  width: 200px;
+  height: 100px;
+}
+
+th {
+  border-left-width: 0;
+  min-width: 120px;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+td {
+  border-left-width: 0;
+  min-width: 120px;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+td:first-child {
+  border-left-width: 1px;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+}
+
+tr:nth-child(odd) {
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+  color: black;
+}
