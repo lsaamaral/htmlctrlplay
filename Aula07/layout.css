@@ -1,0 +1,46 @@
+
+html, body{
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;    
+}
+
+header, main, footer {
+    padding: 20px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ccc;
+}
+
+main {
+    flex: 1;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
