@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+.box {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(blue, lightblue);
+    border-radius: 10px;
+    padding: 2px;
+    box-sizing: border-box;
+}
+
+.box h1 {
+    background: rgba(255, 255, 255, 0.562);
+    border-bottom: 6px solid white;
+}
+
+.box p {
+    color:aliceblue;
+}
+
+.box2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(blue, lightblue);
+    box-shadow: -5px 10px 5px 3px red,
+    5px -10px 5px 4px yellow;
+}
+
+.box2 h1 {
+    color: white;
+    text-align: center;
+    text-shadow: -5px 2px 5px black;
+}
