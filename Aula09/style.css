@@ -1,0 +1,152 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Press+Start+2P&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: "Press Start 2P", system-ui;
+}
+
+body {
+    background-color: black;
+    font-size: 20px;
+}
+
+/*Cabecalho*/
+.topo {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-topo {
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 900px;
+    height: 150px;
+}
+
+.conteiner-topo>div {
+    padding: 10px;
+}
+
+.conteiner-topo>div p {
+    font-size: 12px;
+    text-align: center;
+}
+
+.conteiner-topo>div input{
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+/*Main*/
+.conteiner-conteudo-principal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.sessao-conteudo-principal {
+    width: 900px;
+    height: 900px;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr 1fr;
+    padding: 50px 0px;
+}
+
+.conteiner-modificadores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.conteiner-modificadores>div p{
+    text-align: center;
+    font-weight: bold;
+    background-color: rgb(243, 243, 142);
+}
+
+.conteiner-modificadores>div input{
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 10px;
+}
+
+.conteiner-vdv-img {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteiner-vdv {
+    width: 100%;
+    height: 150px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
+}
+
+.conteiner-vdv>div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.conteiner-vdv>div p{
+    font-size: 25px;
+    margin: 0;
+}
+
+.conteiner-vdv>div input{
+    border-radius: 5px;
+    height: 30px;
+    width: 95%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.conteiner-img {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteiner-img img{
+    width: 80%;
+    height: 80%;
+    padding-left: 50px;
+}
+
+.conteiner-biografia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.conteiner-biografia h2{
+    padding-bottom: 15px;
+}
+
+.conteiner-biografia textarea {
+    border-radius: 10px;
+    resize: none;
+    padding: 5px 10px;
+    font-size: 15px;
+}

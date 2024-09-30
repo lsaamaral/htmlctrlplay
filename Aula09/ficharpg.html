@@ -4,88 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <section>
-            <div>
+    <header class="topo">
+        <section class="conteiner-topo">
+            <div class="conteiner-nome-p">
                 <p>Nome Personagem</p>
-                <input type="text" name="name" id="">
+                <input type="text" name="nome_p" id="">
             </div>
-            <div>
+            <div class="conteiner-nome-j">
                 <p>Nome Jogador</p>
-                <input type="text" name="name_j" id="">
+                <input type="text" name="nome_j" id="">
             </div>
-            <div>
+            <div class="conteiner-exp">
                 <p>Pontos de Experiência</p>
                 <input type="number" name="exp" id="">
             </div>
-            <div>
+            <div class="conteiner-raca">
                 <p>Raça</p>
-                <input type="text" name="race" id="">
+                <input type="text" name="raca" id="">
             </div>
-            <div>
+            <div class="conteiner-classe">
                 <p>Classe</p>
-                <input type="text" name="class" id="">
+                <input type="text" name="classe" id="">
             </div>
-            <div>
+            <div class="conteiner-alinhamento">
                 <p>Alinhamento</p>
-                <input type="text" name="kindness" id="">
+                <input type="text" name="alinhamento" id="">
             </div>
         </section>
     </header>
-    <main>
-        <section>
-            <div>
-                <div>
+    <main class="conteiner-conteudo-principal">
+        <section class="sessao-conteudo-principal">
+            <div class="conteiner-modificadores">
+                <div class="forca">
                     <p>FOR</p>
-                    <input type="number" name="strength" id="">
+                    <input type="number" name="forca" id="">
                 </div>
-                <div>
+                <div class="destreza">
                     <p>DES</p>
-                    <input type="number" name="dexterity" id="">
+                    <input type="number" name="destreza" id="">
                 </div>
-                <div>
+                <div class="constituicao">
                     <p>CON</p>
-                    <input type="number" name="constitution" id="">
+                    <input type="number" name="constituicao" id="">
                 </div>
-                <div>
+                <div class="inteligencia">
                     <p>INT</p>
-                    <input type="number" name="inteligence" id="">
+                    <input type="number" name="inteligencia" id="">
+                </div>
+                <div class="sabedoria">
+                    <p>SAB</p>
+                    <input type="number" name="sabedoria" id="">
+                </div>
+                <div class="carisma">
+                    <p>CAR</p>
+                    <input type="number" name="carisma" id="">
                 </div>
             </div>
-            <div>
-                <div>
-                    <p>Vida</p>
-                    <input type="number" name="life" id="">
+            <div class="conteiner-vdv-img">
+                <div class="conteiner-vdv">
+                    <div>
+                        <p>Vida</p>
+                        <input type="number" name="life" id="">
+                    </div>
+                    <div>
+                        <p>Defesa</p>
+                        <input type="number" name="defence" id="">
+                    </div>
+                    <div>
+                        <p>Velocidade</p>
+                        <input type="number" name="speed" id="">
+                    </div>
                 </div>
-                <div>
-                    <p>Defesa</p>
-                    <input type="number" name="defence" id="">
-                <div>
-                    <p>Velocidade</p>
-                    <input type="number" name="speed" id="">
+                <div class="conteiner-img">
+                    <img src="jake.png" alt="Jake" width="300" height="400">
                 </div>
-                <div><img src="jake.png" alt="Jake" width="300" height="400"></div>
             </div>
-            <div>
+            <div class="conteiner-biografia">
                 <h2>
                     Biografia
                 </h2>
                 <textarea name="" cols="30" rols="25"></textarea>
             </div>
         </section>
-    </main>
-    <footer>
-        <div>
-            <div>
+        <section class="sessao-conteudo-secundario">
+            <div class="conteiner-equipamentos">
                 <h3>Equipamentos</h3>
                 <textarea name="" id="" cols="30" rols="25"></textarea>
             </div>
-            <div>
+            <div class="conteiner-caracteristicas">
                 <h3>Características</h3>
-               <textarea name="" id="" cols="30" rols="25"></textarea>
+                <textarea name="" id="" cols="30" rols="25"></textarea>
             </div>
+        </section>
+    </main>
+    <footer>
+        <div class="conteiner-rodape">
+            <a href="#">Link pra sua página aqui</a>
         </div>
    </footer>
 </body>
