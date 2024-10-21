@@ -12,26 +12,25 @@ var tentativas = 0;
 var acertouBomba = false;
 
 function jogar() {
-    if (tentativas < 3) {
-        var linha = parseInt(document.getElementById("linha").value);
-        var coluna = parseInt(document.getElementById("coluna").value);
-    }
-
-    if (linha >= 1 && linha <= 4 && coluna >= 1 && coluna <= 4) {
+    var linha = parseInt(document.getElementById("linha").value);
+    var coluna = parseInt(document.getElementById("coluna").value);
+    
+    // Verificar se as coordenadas estão dentro dos limites corretos
+    if (linha >= 1 && linha <= 4 && coluna >= 1 && coluna <= 5) {
         tentativas++;
-        if (campo[linha][coluna-1] == "bomba") {
-            acertouBomba = True;
-            document.write("Voce acertou uma bomba!! Game Over");
+        
+        if (campo[linha][coluna - 1] == "bomba") { // Coluna é ajustada aqui (coluna - 1)
+            acertouBomba = true;
+            document.getElementById("resultado").innerHTML = "Você acertou uma bomba!! Game Over";
         } else {
-            document.write("Nenhuma bomba aqui, pode continuar jogando");
+            document.getElementById("resultado").innerHTML = "Nenhuma bomba aqui, pode continuar jogando";
         }
     } else {
-        alert('Escolha uma linha entre 1 e 4');
+        document.getElementById("resultado").innerHTML = 'Escolha uma linha entre 1 e 4, e uma coluna entre 1 e 5';
     }
 
-    //Se o jogador fizer 3 tentativas ou acertar nenhuma bomba
+    // Se o jogador fizer 3 tentativas sem acertar bomba, ele ganha
     if (tentativas === 3 && !acertouBomba) {
-        document.write("Parabéns, você ganhou o jogo!!");
+        document.getElementById("resultado").innerHTML = "Parabéns, você ganhou o jogo!!";
     }
-
 }
