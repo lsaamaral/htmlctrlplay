@@ -1,22 +1,22 @@
-var serieFavorita = "Stranger Things"
-var serieInteressante = "The Walking Dead"
-var serieMuitoBoa = "Game of Thrones"
+let serieFavorita = "Stranger Things"
+let serieInteressante = "The Walking Dead"
+let serieMuitoBoa = "Game of Thrones"
 
-// var series = ["Stranger Things", "The Walking Dead", "Breaking Bad"]
+// let series = ["Stranger Things", "The Walking Dead", "Breaking Bad"]
 
-var series = [];
+let series = [];
 series[2] = "Breaking Bad"
 series[0] = "Stranger Things"
 series[3] = "Hora de Aventura"
 series.push("Nova série no final do vetor")
 
-var globodeouro = series[3];
+let globodeouro = series[3];
 // document.write(series[4]);
 
-var series2 = series;
-var series3 = series.splice()
+let series2 = series;
+let series3 = series.splice()
 
-var lista = [];
+let lista = [];
 lista["series"] = ["Serie 1", "Serie 2", "Serie 3"];
 lista["filmes"] = [];
 lista["filmes"][0] = "Filme 1";
@@ -24,7 +24,7 @@ lista["filmes"][1] = "Filme 2";
 //document.write(lista["series"][1]);
 //document.write(lista["filmes"][1]);
 
-var jogoDaVelha = [];
+let jogoDaVelha = [];
 jogoDaVelha[0] = ["X", "O", "O"];
 jogoDaVelha[1] = ["O", "X", "O"];
 jogoDaVelha[2] = ["X", "O", "X"];
@@ -98,19 +98,19 @@ switch(opcao) {
     * - multiplicação
 */
 
-var x = 4;
+let x = 4;
 x++; //5
 
-var y = 3;
+let y = 3;
 y--; //2
 
-var resultado = x%y;
+let resultado2 = x%y;
 //document.write(resultado)
 
 //ESTRUTURAS DE REPETIÇÃO
 
-var numero = 0;
-var resposta = 0;
+let numero = 0;
+let resposta = 0;
 while(numero != -1){
     resposta += numero;
     numero = prompt();
@@ -118,8 +118,8 @@ while(numero != -1){
 }
 //document.write(resposta);
 
-var numero = -1;
-var resultado = 0;
+let numero2 = -1;
+let resultado = 0;
 do{
     resultado = parseInt(resultado)
     resultado += numero;
@@ -132,9 +132,9 @@ for (variavel; condicao ; incremento){
 
 }
 document.write("<table border=1>");
-    for(var i=0;i<=5;i++){
+    for(let i=0;i<=5;i++){
         //document.write("<tr>");
-            for(var j=0;j<=2;j++){
+            for(let j=0;j<=2;j++){
                 //document.write("<td>");
                 //document.write("DADOS DA TABELA");
                 //document.write("</td>");
