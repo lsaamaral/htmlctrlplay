@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções e Eventos HTML</title>
+    <script language="javascript" src="functions.js"></script>
+    <style>
+        div {
+            background-color: grey;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <hr>
+    <div onmouseout="mensagemQuadrado()">
+        Quadrado
+    </div>
+    <input type="text" onkeydown="teclaPressionada(event)">
+    <p id="texto"></p>
+    <hr>
+    <h2>Escolha o personagem da sua história</h2>
+    <img onclick="historiaFinn()" src="finn.png">
+    <img onclick="historiaJake()" src="jake.png">
+    <p id="historia"></p>
+
+</body>
+</html>

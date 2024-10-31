@@ -1,22 +1,30 @@
-var campo = [];
-var mar = "mar";
-var bomba = "bomba";
-var exemplo = "exemplo";
+let campo = [];
+const mar = "mar";
+const bomba = "bomba";
 
 campo[1] = [mar, bomba, mar, bomba, mar];
 campo[2] = [mar, mar, mar, mar, mar];
 campo[3] = [bomba, mar, mar, bomba, mar];
-campo[4] = [exemplo, mar, mar, mar, bomba];
+campo[4] = [bomba, mar, mar, mar, bomba];
 
-var tentativas = 0;
-var acertouBomba = false;
+let tentativas = 0;
+let acertouBomba = false;
+//let jogadasFeitas = []; //Armazena jogadas
 
 function jogar() {
-    var linha = parseInt(document.getElementById("linha").value);
-    var coluna = parseInt(document.getElementById("coluna").value);
+    let linha = parseInt(document.getElementById("linha").value);
+    let coluna = parseInt(document.getElementById("coluna").value);
     
     // Verificar se as coordenadas estão dentro dos limites corretos
     if (linha >= 1 && linha <= 4 && coluna >= 1 && coluna <= 5) {
+        //let jogada = '${linha}-${coluna}';
+        //if(jogadasFeitas.includes(jogada)){
+        //    document.getElementById("resultado").innerHTML = "Você ja jogou nessa posição. Tente outra."
+        //    return; //Impedir a jogada duplicada
+        //}
+
+        //jogadasFeitas.push(jogada);
+
         tentativas++;
         
         if (campo[linha][coluna - 1] == "bomba") { // Coluna é ajustada aqui (coluna - 1)
@@ -30,7 +38,7 @@ function jogar() {
     }
 
     // Se o jogador fizer 3 tentativas sem acertar bomba, ele ganha
-    if (tentativas === 3 && !acertouBomba) {
+    if (tentativas == 3 && !acertouBomba) {
         document.getElementById("resultado").innerHTML = "Parabéns, você ganhou o jogo!!";
     }
 }
