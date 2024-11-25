@@ -1,0 +1,133 @@
+html,
+body {
+    font-family: open sans, sans-serif !important;
+    font-size: 100%
+}
+
+html {
+    background-image: url(../img/bg.jpg);
+    background-attachment: fixed;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-color: #d7c4a3;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+main {
+    background-color: transparent !important;
+    width: 35rem;
+    margin: 8rem auto;
+    text-align: center;
+}
+
+.tabela {
+    border-spacing: .4rem;
+    border-collapse: separate;
+    margin-top: .2rem
+}
+
+th {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #d1ba91;
+    background-color: #2b2720;
+    min-height: 2.5rem;
+    width: auto;
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    min-width: 4rem;
+    text-align: center !important
+}
+
+.thModificadores {
+    border: 2px solid #2b2720;
+    color: #2b2720;
+    width: 4rem;
+    background-color: #fde9c6;
+    box-sizing: border-box
+}
+
+.thHabilidades,
+.thTotal,
+.thModificadores {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    font-size: .8rem
+}
+
+th span {
+    display: block
+}
+
+.thMenor {
+    font-size: .5rem;
+    line-height: .5rem;
+    color: #baa277
+}
+
+.campoTabela {
+    width: 4rem;
+    height: 2.5rem;
+    background-color: rgba(229, 210, 176, .4);
+    box-sizing: border-box;
+    color: #2b2720;
+    border: 2px solid #2b2720;
+    text-align: center;
+    line-height: 2.4rem;
+    font-size: 1rem;
+    font-weight: 700
+}
+
+input:focus {
+    border: 2px solid #6b4c2c;
+    color: #6b4c2c;
+    outline: none
+}
+
+.mod {
+    background-color: rgba(253, 233, 198, .6) !important
+}
+
+.thTotal {
+    padding-top: .8rem;
+    padding-bottom: .8rem;
+    font-size: .8rem;
+    color: #e5d2b0 !important;
+    font-weight: 100;
+    box-sizing: border-box;
+    background-color: #6a0015 !important
+}
+
+.total {
+    border-top: 0 solid transparent !important;
+    border-right: 0 solid transparent !important;
+    border-left: 0 solid transparent !important;
+    border-bottom: 2px solid #6a0015;
+    color: #6a0015;
+    font-weight: 100 !important;
+    box-sizing: border-box;
+    background-color: transparent !important;
+    height: 2.3rem
+}
+
+#botoes {
+    display: flex;
+    justify-content: left;
+    padding-left: 6px;
+}
+
+.calcular,
+.resetar {
+    text-transform: uppercase;
+    color: #d1ba91;
+    background-color: #2b2720;
+    min-height: 2.5rem;
+    width: auto;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    min-width: 4rem;
+    text-align: center !important;
+}
