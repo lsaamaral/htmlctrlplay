@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Insira um numero a baixo e depois Clique no botão para ver sua tabuada</h1>
+    <input id="number" type="number">
+    <button onclick="Tabuada()">Tabuada</button>
+    <script>
+        function Tabuada(){
+            let number = Number(document.getElementById("number").value);
+            document.write(number + " x 1 = " + number * 1 + ";",number + " x 2 = " + number * 2 + ";",number + " x 3 = " + number * 3 + ";",number + " x 4 = " + number * 4 + ";",number + " x 5 = " + number * 5 + ";",number + " x 6 = " + number * 6 + ";",number + " x 7 = " + number * 7  + ";",number + " x 8 = " + number * 8 + ";",number + " x 9 = " + number * 9 + ";",number + " x 10 = " + number * 10 + ";")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troca de cor</title>
+    <style>
+        .blue {background-color: #00008b; color: white;}
+        .red {background-color: #8b0000; color: white;}
+        .green {background-color: #008000; color: white;}
+        .reset{background-color: lightgray; color: black}
+        .random{background-color: #ff9800; color: black}
+        
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Troque a cor do fundo!</h1>
+        <p>Escolha uma das opções abaixo ou personalize sua própria cor.</p>
+        <button class="blue" onclick="mudarCor('#00008b')">AZUL</button>
+        <button class="red" onclick="mudarCor('#8b0000')">VERMELHO</button>
+        <button class="green" onclick="mudarCor('#008000')">VERDE</button>
+        <button class="reset" onclick="mudarCor('white')">RESETAR</button>
+        <button class="random" onclick="corAleatoria()">COR ALEATORIA</button>
+        <br><br>
+        <label>Escolha uma cor personalizada: </label>
+        <input type="color" id="corEscolhida" onchange="mudarParaEscolhida()">
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
