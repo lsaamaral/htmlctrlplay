@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Tema do Site</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            transition: 0.3s;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="botaotema" onclick="mudarCor()">Mudar Tema</button>
+
+    <script>
+        function mudarCor(){
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    
+</body>
+</html>

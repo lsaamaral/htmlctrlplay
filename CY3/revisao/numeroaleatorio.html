@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo do Número Aleatório</title>
+</head>
+<body>
+    <h1>Adivinhe um número aleatório de 1 a 100</h1>
+    <input type="number" id="chute">
+    <button id="botaoverificar" onclick="comparar()">Verificar</button>
+    <p id="resultado"></p>
+    
+    <script>
+        let numeroSecreto = 40;
+        let tentativas = 0;
+
+        function comparar() {
+            let chute = parseInt(document.getElementById('chute').value);
+            let resultado = document.getElementById('resultado');
+
+            tentativas++;
+
+            if (chute === numeroSecreto) {
+                resultado.innerText = `Voce acertou o número em ${tentativas}!!`;
+            } else if(chute < numeroSecreto){
+                resultado.innerText = 'Tente um número maior :(';
+            } else if(chute > numeroSecreto){
+                resultado.innerText = 'Tente um número menor :(';
+            }
+        }
+
+    </script>
+</body>
+</html>
