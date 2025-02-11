@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flip de carta</title>
+    <style>
+        .carta {
+            width: 200px;
+            height: 300px;
+            background-color: darkblue;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cartavirada {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="carta" onclick="virarcarta(this)"></div>
+    
+    <script>
+        const carta = document.getElementsByClassName('carta');
+
+        function virarcarta(carta){
+            carta.classList.toggle('cartavirada');
+        };
+    </script>
+    
+</body>
+</html>

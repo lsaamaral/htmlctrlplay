@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartas Interativas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-wrap: wrap;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .card {
+            width: 100px;
+            height: 150px;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2   s;
+        }
+        .card:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="toggleNumber(this)"></div>
+        <div class="card" onclick="toggleNumber(this)"></div>
+        <div class="card" onclick="toggleNumber(this)"></div>
+        <div class="card" onclick="toggleNumber(this)"></div>
+        <div class="card" onclick="toggleNumber(this)"></div>
+        <div class="card" onclick="toggleNumber(this)"></div>
+    </div>
+    
+    <script>
+        let availableNumbers = [1, 2, 3, 4, 5, 6];
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function toggleNumber(card) {
+            if (card.innerHTML === "") {
+                if (availableNumbers.length > 0) {
+                    availableNumbers = shuffle(availableNumbers);
+                    let number = availableNumbers.pop();
+                    card.innerHTML = number;
+                }
+            } else {
+                availableNumbers.push(parseInt(card.innerHTML));
+                card.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
