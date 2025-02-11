@@ -69,7 +69,6 @@
 /*Front of the card*/
 .flip-card-front{
     /*Appearance*/
-    background-image: url("../images/ui/CtrlPlay.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
 }

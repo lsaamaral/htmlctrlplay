@@ -6,6 +6,8 @@
     <title>Memória</title>
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/main.css">
+    <script src="scripts/card.js"></script>
+    <script src="scripts/board.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -18,6 +20,8 @@
             </div>
         </div>
     </template>
+    <!--Board-->
+    <div id="board" class="hidden"></div>
     <!--Menu-->
     <div id="menu">
         <h1>Jogo da memória</h1>
@@ -25,8 +29,5 @@
             <select name="numCards" id="numCards"></select>
             <button id="start">start</button>
         </div>
-    </div>
-    <!--Board-->
-    <div id="board" class="hidden"></div>
 </body>
 </html>
