@@ -6,15 +6,15 @@
     <title>Memória</title>
     <link rel="stylesheet" href="css/board.css">
     <link rel="stylesheet" href="css/main.css">
-    <script src="scripts/card.js"></script>
+    <script src="scripts/card.js" defer></script>
     <script src="scripts/board.js" defer></script>
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <!--Template-->
     <template id="cardTemplate">
-        <div id="flip-card">
-            <div id="flip-card-inner">
+        <div class="flip-card">
+            <div class="flip-card-inner">
                 <div class="flip-card-front"></div>
                 <div class="flip-card-back"><img src="heros/card01.jpeg"></div>
             </div>
@@ -29,5 +29,6 @@
             <select name="numCards" id="numCards"></select>
             <button id="start">start</button>
         </div>
+    </div>
 </body>
 </html>
