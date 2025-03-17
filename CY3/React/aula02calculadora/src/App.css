@@ -1,7 +1,65 @@
-.custom-div {
-  display: grid;
+.calculator {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 300px;
+  width: 360px;
   font-weight: bold;
-  background-color: lightgreen;
+  font-size: 2rem;
+}
+
+.display {
+  background-color: rgb(96, 88, 188);
+  color: white;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: end;
+  padding: 16px;
+}
+
+.input {
+  font-size: 1.5rem;
+}
+
+.result-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  padding: 10px;
+  background: white;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  background: rgb(255, 255, 255);
+  transition: 0.3s;
+}
+
+button:hover {
+  opacity: 0.75;
+}
+
+.operator {
+  background-color: rgb(214, 230, 245);
+  color: rgb(32, 32, 119);
+  font-weight: bold;
+}
+
+.delete {
+  font-size: 1rem;
+}
+
+.empty {
+  background: transparent;
+  pointer-events: none;
 }
