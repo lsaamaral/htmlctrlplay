@@ -1,25 +1,26 @@
 import { useState } from "react";
+import { evaluate } from "mathjs";
 
 export function Calculator() {
     const [input, setInput] = useState("");
-    //const [result, setResult] = useState("");
+    const [result, setResult] = useState("");
 
     const handleClick = (value) => {
         setInput(input + value);
     }
 
-    // const handleCalculate = () => {
-    //     try {
-    //         if (!input) return;
-    //         setResult(evaluate(input).toString());
-    //     } catch (error) {
-    //         setResult("Error");
-    //     }
-    // };
+    const handleCalculate = () => {
+        try {
+            if (!input) return;
+            setResult(evaluate(input).toString());
+        } catch (error) {
+            setResult("Error");
+        }
+    };
 
     const handleClear = () => {
         setInput("");
-        // setResult("");
+         setResult("");
     };
 
     const handleDelete = () => setInput((prev) => prev.slice(0, -1));
@@ -30,7 +31,7 @@ export function Calculator() {
                 <span className="input">{input}</span>
                 <div className="result-container">
                     <span>=</span>
-                    {/* <span className="result">{result}</span> */}
+                    { <span className="result">{result}</span> }
                 </div>
             </div>
             <div className="buttons">
@@ -57,7 +58,7 @@ export function Calculator() {
                 <button onClick={() => handleClick(".")}>.</button>
                 <button onClick={() => handleClick("0")}>0</button>
                 <button className="delete" onClick={handleDelete}>DEL</button>
-                <button className="operator">=</button>
+                <button className="operator" onClick={handleCalculate}>=</button>
             </div>
         </div>
 
