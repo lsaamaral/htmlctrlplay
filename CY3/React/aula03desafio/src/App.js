@@ -4,7 +4,8 @@ import GaleriaVirtual from './Galeria';
 function App() {
   return (
     <div className='App'>
-      <GaleriaVirtual />
+      {/* <GaleriaVirtual /> */}
+      
     </div>
   );
 }
