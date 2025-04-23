@@ -5,7 +5,8 @@ import { useState, useEffect } from 'react';
 
 function App() {
 
-  const [quests, setQuests] = useState([]);
+  const localQuests = JSON.parse(window.localStorage.getItem("quests")) || [];
+  const [quests, setQuests] = useState(localQuests);
   // const [lastSaved, setLastSaved] = useState(null);
 
   // useEffect(() => {
@@ -15,6 +16,39 @@ function App() {
   //     setLastSaved(savedDate);
   //   }
   // }, []);
+
+  const concludedQuests = quests.filter(q => q.status === "concluido");
+  const notConcludedQuests = quests.filter(q => q.status === "aberto");
+
+  function saveEditQuest(quest, title) {
+    let auxQuests = quests;
+    const editedQuest = {...quest, title: title || quest.title};
+
+    const index = auxQuests.findIndex(q => q.id === editedQuest.id);
+    auxQuests.splice(index, 1, editedQuest);
+
+    localStorage.setItem("quests", JSON.stringify(auxQuests));
+    getQuests();
+  }
+
+  function saveConcludedQuest(quest) {
+    let auxQuests = quests;
+    const editedQuest = {
+      id: quest.id,
+      title: quest.title,
+      status: "concluido",
+      created_at: quest.created_at,
+    };
+    
+    const findQuestPosition = auxQuests.findIndex(
+      (quest) => quest.id === editedQuest.id
+    );
+    
+    auxQuests.splice(findQuestPosition, 1, editedQuest);
+
+    localStorage.setItem("quests", JSON.stringify(auxQuests));
+    getQuests();
+  }
 
   function saveAddQuest(title) {
     let auxQuests = quests;
@@ -44,17 +78,43 @@ function App() {
     setQuests(JSON.parse(window.localStorage.getItem("quests")));
   }
 
+  function saveDeleteQuest(quest) {
+    let auxQuests = quests;
+
+    const filterAuxQuests = auxQuests.filter(
+      (auxQuest) => auxQuest.id !== quest.id
+    );
+
+    localStorage.setItem("quests", JSON.stringify(filterAuxQuests));
+    getQuests();
+  }
+
   return (
     <div className="container">
       <div className="card">
         <h1 className='title'>Lista de Tarefas</h1>
         <AddQuest saveAddQuest={saveAddQuest}></AddQuest>
-        <QuestList quests={quests}/>
-        {/* {lastSaved && (
-          <p>
-            Última atualização: {lastSaved}
-          </p>
-        )} */}
+        <div className="section">
+          <h2>Abertas</h2>
+          <div className="task-list">
+            <QuestList 
+              quests={notConcludedQuests}
+              saveEditQuest={saveEditQuest}
+              saveConcludedQuest={saveConcludedQuest}
+              saveDeleteQuest={saveDeleteQuest}
+            />
+          </div>
+        </div>
+        <div className="section">
+          <h2>Concluídas</h2>
+          <div className="task-list">
+            <QuestList 
+              quests = {concludedQuests}
+              saveEditQuest = {saveEditQuest}
+              saveConcludedQuest = {saveConcludedQuest}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );
