@@ -1,0 +1,71 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  font-family: serif;
+  gap: 16px;
+  background: linear-gradient(to right, #ffffff, #a8b9e3);
+  min-height: 100vh;
+  padding: 40px;
+  color: #191e43;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+  font-size: 1.75rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: #ccc;
+  margin: 12px 0;
+  border: none;
+}
+
+.phrase-generator {
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.generate-button {
+  background: linear-gradient(to right, #1e2979, #182cc1);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s erase;
+}
+
+.generate-button:hover {
+  background: linear-gradient(to right, #1e2979, #a8b9e3);
+}
+
+.phrase-text {
+  margin: 0;
+  font-size: 1em;
+}
+
+.phrase-author {
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: #182cc1;
+}
+
+.loading-container, .error-container {
+  min-height: 80px;
+}
+
+.loading-text, .error-text {
+  font-size: 1.125rem;
+}
