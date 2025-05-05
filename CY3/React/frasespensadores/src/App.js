@@ -8,7 +8,7 @@ function App() {
     //parte grafica
     <div className="app-container">
       <div className="card">
-        <h1 className="title">Gerador de Frases</h1>
+        <h1 className="title">Gerador de Personagens!</h1>
         <hr className="divider"></hr>
         <PhraseGenerator />
       </div>
