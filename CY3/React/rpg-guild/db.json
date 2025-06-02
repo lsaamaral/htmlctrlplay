@@ -1,4 +1,37 @@
 {
-  "guilds": [],
-  "members": []
+  "guilds": [
+    {
+      "id": "52db",
+      "name": "wvwvdvdvdv"
+    },
+    {
+      "id": "7a2a",
+      "name": "wvwvdv"
+    },
+    {
+      "id": "219a",
+      "name": "wvwvdv"
+    },
+    {
+      "id": "19a1",
+      "name": "wvwvdv"
+    }
+  ],
+  "members": [
+    {
+      "id": "0e03",
+      "name": "fvvfdv",
+      "guildId": "52db"
+    },
+    {
+      "id": "64f0",
+      "name": "vfdvdfv",
+      "guildId": "7a2a"
+    },
+    {
+      "id": "800d",
+      "name": "vfdvdfvdvfv",
+      "guildId": "7a2a"
+    }
+  ]
 }

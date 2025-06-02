@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { MemberForm } from "./memberForm";
 import "../App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import requester from "../axios";
 
 export function Members() {
     const navigate = useNavigate();
@@ -9,6 +10,28 @@ export function Members() {
     const [members, setMembers] = useState([]);
 
     const updateMembers = (data) => setMembers([...members, data]);
+
+    useEffect(() => {
+        const getMembers = async () => {
+            try {
+                const response = await requester.get("/members");
+                setMembers(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar os membros", error);
+            }
+        };
+
+        getMembers();
+    }, []);
+
+    const deleteMember = async ({id}) => {
+        try {
+            await requester.delete(`/members/${id}`);
+            setMembers(members.filter((member) => member.id !== id));
+        } catch (error) {
+            console.error("Erro ao deletar o membro: ", error);
+        }
+    }
 
     return (
         <div className="divrotas">
@@ -18,6 +41,7 @@ export function Members() {
                     <li key={member.id}>
                         {member.name}
                         <button onClick={() => navigate(member.id)}>Editar</button>
+                        <button onClick={() => deleteMember(member)}>Excluir</button>
                     </li>
                 ))}
             </ul>

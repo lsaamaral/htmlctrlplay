@@ -21,18 +21,6 @@ export function MemberForm(props) {
         if (memberId) getMember();
     }, [memberId]);
 
-    useEffect(() => {
-        const getGuilds = async () => {
-            try {
-                const response = await requester.get("/guilds");
-                setGuilds(response.data);
-            } catch (error) {
-                console.error("Erro ao buscar as guildas: ", error);
-            }
-        };
-        getGuilds();
-    }, []);
-
     const addMember = async ({ name, guildId }) => {
         const created = {
             name,
@@ -47,10 +35,38 @@ export function MemberForm(props) {
             console.error("Erro ao adicionar a membro: ", error);
         }
     };
+    
+    const editMember = async ({id, name, guildId}) => {
+        const updated = {
+            name,
+            guildId,
+        };
+
+        try {
+            const response = await requester.patch(`/members/${id}`, updated);
+            setMember(response?.data);
+        } catch (error) {
+            console.error("Erro ao editar o membro: ", error);
+        }
+    };
+
+    const handleSubmit = memberId ? editMember : addMember;
+
+    useEffect(() => {
+        const getGuilds = async () => {
+            try {
+                const response = await requester.get("/guilds");
+                setGuilds(response.data);
+            } catch (error) {
+                console.error("Erro ao buscar as guildas: ", error);
+            }
+        };
+        getGuilds();
+    }, []);
 
     const onSubmit = (e) => {
         e.preventDefault();
-        addMember(member);
+        handleSubmit(member);
     }
 
     return (
