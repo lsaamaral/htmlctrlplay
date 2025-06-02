@@ -7,13 +7,13 @@ export function Navbar() {
             <h1 className="navbar-title">Vizinhança do jogo</h1>
             <ul className="navbar-links">
                 <li>
-                    <Link to="/" className="nav-link">Home</Link>
+                    <div className="hoverlink"><Link to="/" className="nav-link">Home</Link></div>
                 </li>
                 <li>
-                    <Link to="/guilds" className="nav-link">Guildas</Link>
+                    <div className="hoverlink"><Link to="/guilds" className="nav-link">Guildas</Link></div>
                 </li>
                 <li>
-                    <Link to="/members" className="nav-link">Membros</Link>
+                    <div className="hoverlink"><Link to="/members" className="nav-link">Membros</Link></div>
                 </li>
             </ul>
         </nav>

@@ -63,7 +63,7 @@ export function GuildForm(props) {
                 <input name="name" type="text" defaultValue={guild?.name} onChange={(e) => setGuild((prev) => ({...prev, name: e.target.value}))} />
             </div>
 
-            <button type="submit">Confirmar</button>
+            <button className="botaoconfirmar" type="submit">Confirmar</button>
         </form>
     );
 }

@@ -104,7 +104,7 @@ export function MemberForm(props) {
                     ))}
                 </select>
             </div>
-            <button type="submit">Confirmar</button>
+            <button className="botaoconfirmar" type="submit">Confirmar</button>
         </form>
     );
 }
