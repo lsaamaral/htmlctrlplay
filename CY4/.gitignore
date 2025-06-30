@@ -1,0 +1,6 @@
+/node_modules
+/mongodb/node_modules
+/mongodb/package-lock.json
+/mongodb/package.json
+package-lock.json
+package.json
