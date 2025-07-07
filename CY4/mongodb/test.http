@@ -1,0 +1,11 @@
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+  "title": "a divina comedia",
+  "author": "dante",
+  "year": 1321,
+  "genre": "poesia"
+}
+
+# GET http://localhost:3000/
