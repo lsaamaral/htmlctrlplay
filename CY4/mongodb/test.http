@@ -8,4 +8,7 @@ Content-Type: application/json
   "genre": "poesia"
 }
 
-# GET http://localhost:3000/
+#GET http://localhost:3000/api/books/686c4d6a6336cb427d161f8b
+
+# DELETE  http://localhost:3000/api/books/686c508b1870edf62a9cba79
+# Content-Type: application/json
