@@ -4,23 +4,13 @@ const connectDB = require("./config/config");
 const User = require("./models/user");
 const Book = require("./models/book");
 
-const validateTitle = require("./middlewares/validateTitle");
+
+const bookRoutes = require('./routes/bookRoutes');
 
 const app = express();
 connectDB();
 app.use(express.json());
-
-app.post("/api/books", validateTitle, async (req, res) => {
-    try {
-        const {title, author, year, genre} = req.body;
-        const book = new Book({title, author, year, genre});
-        await book.save();
-        res.status(201).json(book);
-    } catch (error) {
-        console.error("Erro ao criar livro:", error);
-        res.status(500).json({error: "Erro ao criar livro"});
-    }
-});
+app.use('/api', bookRoutes);
 
 // app.get("/api/books", async (req, res) => {
 //     try {
