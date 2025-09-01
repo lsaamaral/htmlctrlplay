@@ -58,6 +58,14 @@
                 "description": "Atualiza um livro na biblioteca digital que já tinha sido adicionado anteriormente. A requisição precisa conter todos os parâmetros obrigatórios para a criação de um livro",
                 "parameters": [
                     {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do livro que será atualizado",
+                        "required": true,
+                        "type": "string",
+                        "example": "68b628788cf2ccd91071c38c"
+                    },
+                    {
                         "name": "body",
                         "in": "body",
                         "description": "Dados do livro que serão modificados",
