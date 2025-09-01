@@ -1,14 +1,24 @@
-POST http://localhost:3000/api/books
-Content-Type: application/json
+# POST http://localhost:3000/api/books
+# Content-Type: application/json
 
-{
-  "title": "a divina comedia",
-  "author": "dante",
-  "year": 1321,
-  "genre": "poesia"
-}
+# {
+#   "title": "a divina comedia",
+#   "author": "dante",
+#   "year": 1321,
+#   "genre": "poesia"
+# }
 
-#GET http://localhost:3000/api/books/686c4d6a6336cb427d161f8b
+# GET http://localhost:3000/api/books/686c503f590df3279672cf8e
 
-# DELETE  http://localhost:3000/api/books/686c508b1870edf62a9cba79
+# PATCH http://localhost:3000/api/books/686c503f590df3279672cf8e
+# Content-Type: application/json
+
+# {
+#   "title": "avfgbfgbgfdv",
+#   "author": "dante",
+#   "year": 1321,
+#   "genre": "poesia"
+# }
+
+# DELETE  http://localhost:3000/api/books/689a6ed124f9a18eba20096f
 # Content-Type: application/json

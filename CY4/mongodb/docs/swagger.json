@@ -1,0 +1,102 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Biblioteca Digital API",
+        "description": "Documentação da API para gerenciar uma biblioteca digital."
+    },
+    "host": "localhost:3000",
+    "basePath": "/api",
+    "schemes": ["http"],
+    "paths": {
+        "/books": {
+            "post": {
+                "summary": "Criar um novo livro",
+                "description": "Adiciona um novo livro na biblioteca digital. O novo livro deve conter todos os parâmetros obrigatórios",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Dados do livro que será adicionado",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "example": "A Divina Comédia"
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "example": "Dante"
+                                },
+                                "year": {
+                                    "type": "integer",
+                                    "example": 1321
+                                },
+                                "genre": {
+                                    "type": "string",
+                                    "example": "poesia"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Livro adicionado com sucesso"
+                    },
+                    "500": {
+                        "description": "Erro ao criar livro"
+                    }
+                }
+            }
+        },
+        "/books/{id}": {
+            "patch": {
+                "summary": "Atualizar livro já existente",
+                "description": "Atualiza um livro na biblioteca digital que já tinha sido adicionado anteriormente. A requisição precisa conter todos os parâmetros obrigatórios para a criação de um livro",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Dados do livro que serão modificados",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "example": "Moby Dick"
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "example": "Herman Melville"
+                                },
+                                "year": {
+                                    "type": "integer",
+                                    "example": 1851
+                                },
+                                "genre": {
+                                    "type": "string",
+                                    "example": "Aventura"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Livro atualizado com sucesso"
+                    },
+                    "404": {
+                        "description": "Livro não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro ao atualizar o livro"
+                    }
+                }
+            }
+        }
+    }
+}
