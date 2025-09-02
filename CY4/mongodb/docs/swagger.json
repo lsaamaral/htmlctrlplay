@@ -2,14 +2,59 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "Biblioteca Digital API",
-        "description": "Documentação da API para gerenciar uma biblioteca digital."
+        "title": "API Documentation",
+        "description": "This is the API documentation for our service."
     },
     "host": "localhost:3000",
     "basePath": "/api",
-    "schemes": ["http"],
+    "schemes": [
+        "http"
+    ],
     "paths": {
-        "/books": {
+        "/books":{
+            "post": {
+                "summary": "Criar um novo livro",
+                "description": "Adiciona um novo livro na biblioteca. O novo livro deve conter todos os parametros obrigatorios",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "description": "Dados do livro que sera adicionado",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "title": {
+                                    "type": "string",
+                                    "example": "A Divina Comédia"
+                                },
+                            "author": {
+                                "type": "string",
+                                "example": "Dante"
+                            },
+                            "year": {
+                                "type": "integer",
+                                "example": 1321
+                            },
+                            "genre": {
+                                "type": "string",
+                                "example": "poesia"
+                            }
+                        }
+                    }
+                }
+            ],
+            "responses": {
+                "201": {
+                    "description": "Livro adicionado com sucesso!"
+                },
+                "500": {
+                    "description": "Erro ao adicionar livro"
+                }
+            }
+            }
+        },
+        "/books/{id}":{
             "post": {
                 "summary": "Criar um novo livro",
                 "description": "Adiciona um novo livro na biblioteca digital. O novo livro deve conter todos os parâmetros obrigatórios",
@@ -50,12 +95,10 @@
                         "description": "Erro ao criar livro"
                     }
                 }
-            }
-        },
-        "/books/{id}": {
-            "patch": {
-                "summary": "Atualizar livro já existente",
-                "description": "Atualiza um livro na biblioteca digital que já tinha sido adicionado anteriormente. A requisição precisa conter todos os parâmetros obrigatórios para a criação de um livro",
+            },
+            "delete": {
+                "summary": "Deleta um livro da biblioteca",
+                "description": "Apaga um livro escolhido da biblioteca atravez  uma sequencia de letras e numeros que seram chamados de seu ID",
                 "parameters": [
                     {
                         "name": "id",
@@ -68,40 +111,26 @@
                     {
                         "name": "body",
                         "in": "body",
-                        "description": "Dados do livro que serão modificados",
+                        "description": "ID par deletar um livro",
                         "required": true,
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "title": {
+                                "ID": {
                                     "type": "string",
-                                    "example": "Moby Dick"
-                                },
-                                "author": {
-                                    "type": "string",
-                                    "example": "Herman Melville"
-                                },
-                                "year": {
-                                    "type": "integer",
-                                    "example": 1851
-                                },
-                                "genre": {
-                                    "type": "string",
-                                    "example": "Aventura"
+                                    "example": "67ha98qog0qn"
                                 }
-                            }
-                        }
+                            }   
+                        } 
                     }
                 ],
-                "responses": {
+                "response": {
                     "201": {
-                        "description": "Livro atualizado com sucesso"
+                        "description":"Livro adicionado com sucesso!" 
                     },
-                    "404": {
-                        "description": "Livro não encontrado"
-                    },
-                    "500": {
-                        "description": "Erro ao atualizar o livro"
+                    "500":{
+                        "description": "Erro ao adicionar livro"
+
                     }
                 }
             }
