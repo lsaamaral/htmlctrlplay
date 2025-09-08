@@ -11,16 +11,22 @@ const createBook = async (req, res) => {
     }
 };
 
-const getBook = async (req, res) => {
+const getBooks = async (req, res) => {
     try {
-        const { id } = req.params;
-        const book = await Book.findById(id);
-
-        if (!book) {
-            return res.status(404).json({error: "Livro não encontrado"});
+        let query = {};
+        if (req.query.title) {
+            query.title = { $regex: req.query.title, $options: "i"};
         }
+        if (req.query.author) {
+            query.author = req.query.author;
+        }
+        
+        const books = await Book.find(query);
+        // if (!book) {
+        //     return res.status(404).json({error: "Livro não encontrado"});
+        // }
 
-        res.json(book);
+        res.json(books);
     } catch (error){
         res.status(500).json({error: "Erro ao buscar livros"});
     }
@@ -56,4 +62,4 @@ const deleteBook = async (req, res) => {
     }
 };
 
-module.exports = { createBook, getBook, updateBook, deleteBook };
+module.exports = { createBook, getBooks, updateBook, deleteBook };

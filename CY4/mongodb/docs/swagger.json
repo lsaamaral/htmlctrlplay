@@ -52,20 +52,24 @@
                         "description": "Erro ao adicionar livro"
                     }
                 }
-            }
-        },
-        "/books/{id}":{
+            },
             "get": {
                 "summary": "Mostra as informações do livro em questão",
                 "description": "Mostra todos os dados de um livro presente na biblioteca através de seu ID.",
                 "parameters": [
                     {
-                        "name": "id",
-                        "in": "path",
-                        "description": "ID do livro que será mostrado na tela",
-                        "required": true,
-                        "type": "string",
-                        "example": "68b628788cf2ccd91071c38c"
+                        "name": "title",
+                        "in": "query",
+                        "description": "Filtrar por título do livro",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "author",
+                        "in": "query",
+                        "description": "Filtrar por autor do livro",
+                        "required": false,
+                        "type": "string"
                     }
                 ],
                 "responses": {
@@ -73,13 +77,28 @@
                         "description": "Livro não encontrado"
                     },
                     "200": {
-                        "description": "Informações do livro"
+                        "description": "Lista de livros",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": { "type": "string", "example": "68b628788cf2ccd91071c38c" },
+                                    "title": { "type": "string", "example":"A Divina Comédia" },
+                                    "author": { "type":"string", "example": "Dante" },
+                                    "year": { "type":"integer", "example":1321 },
+                                    "genre": { "type":"string", "example":"poesia" }
+                                }
+                            }
+                        }
                     },
                     "500": {
                         "description": "Erro ao buscar livros"
                     }
                 }
-            },
+            }
+        },
+        "/books/{id}":{
             "patch": {
                 "summary": "Atualiza um livro da biblioteca",
                 "description": "As informações preenchidas devem conter todos os parâmetros obrigatórios de um livro",
