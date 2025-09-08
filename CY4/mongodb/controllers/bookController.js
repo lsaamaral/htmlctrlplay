@@ -50,7 +50,7 @@ const deleteBook = async (req, res) => {
             return res.status(404).json({error: "Livro não encontrado"});
         }
 
-        res.json({message: "Livro excluido com sucesso"});
+        res.status(201).json({message: "Livro excluido com sucesso"});
     } catch (error) {
         res.status(500).json({error: "Erro ao tentar excluir o livro"});
     }

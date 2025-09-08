@@ -2,8 +2,8 @@
     "swagger": "2.0",
     "info": {
         "version": "1.0.0",
-        "title": "API Documentation",
-        "description": "This is the API documentation for our service."
+        "title": "Biblioteca API",
+        "description": "Essa é a documentação para a API de um banco de dados de uma biblioteca."
     },
     "host": "localhost:3000",
     "basePath": "/api",
@@ -13,51 +13,8 @@
     "paths": {
         "/books":{
             "post": {
-                "summary": "Criar um novo livro",
-                "description": "Adiciona um novo livro na biblioteca. O novo livro deve conter todos os parametros obrigatorios",
-                "parameters": [
-                    {
-                        "name": "body",
-                        "in": "body",
-                        "description": "Dados do livro que sera adicionado",
-                        "required": true,
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "title": {
-                                    "type": "string",
-                                    "example": "A Divina Comédia"
-                                },
-                            "author": {
-                                "type": "string",
-                                "example": "Dante"
-                            },
-                            "year": {
-                                "type": "integer",
-                                "example": 1321
-                            },
-                            "genre": {
-                                "type": "string",
-                                "example": "poesia"
-                            }
-                        }
-                    }
-                }
-            ],
-            "responses": {
-                "201": {
-                    "description": "Livro adicionado com sucesso!"
-                },
-                "500": {
-                    "description": "Erro ao adicionar livro"
-                }
-            }
-            }
-        },
-        "/books/{id}":{
-            "post": {
-                "summary": "Criar um novo livro",
-                "description": "Adiciona um novo livro na biblioteca digital. O novo livro deve conter todos os parâmetros obrigatórios",
+                "summary": "Cria um novo livro",
+                "description": "Adiciona um novo livro na biblioteca. O novo livro deve conter todos os parâmetros obrigatórios",
                 "parameters": [
                     {
                         "name": "body",
@@ -89,16 +46,43 @@
                 ],
                 "responses": {
                     "201": {
-                        "description": "Livro adicionado com sucesso"
+                        "description": "Livro adicionado com sucesso!"
                     },
                     "500": {
-                        "description": "Erro ao criar livro"
+                        "description": "Erro ao adicionar livro"
+                    }
+                }
+            }
+        },
+        "/books/{id}":{
+            "get": {
+                "summary": "Mostra as informações do livro em questão",
+                "description": "Mostra todos os dados de um livro presente na biblioteca através de seu ID.",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do livro que será mostrado na tela",
+                        "required": true,
+                        "type": "string",
+                        "example": "68b628788cf2ccd91071c38c"
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description": "Livro não encontrado"
+                    },
+                    "200": {
+                        "description": "Informações do livro"
+                    },
+                    "500": {
+                        "description": "Erro ao buscar livros"
                     }
                 }
             },
-            "delete": {
-                "summary": "Deleta um livro da biblioteca",
-                "description": "Apaga um livro escolhido da biblioteca atravez  uma sequencia de letras e numeros que seram chamados de seu ID",
+            "patch": {
+                "summary": "Atualiza um livro da biblioteca",
+                "description": "As informações preenchidas devem conter todos os parâmetros obrigatórios de um livro",
                 "parameters": [
                     {
                         "name": "id",
@@ -111,25 +95,65 @@
                     {
                         "name": "body",
                         "in": "body",
-                        "description": "ID par deletar um livro",
+                        "description": "Dados do livro que será atualizado",
                         "required": true,
                         "schema": {
                             "type": "object",
                             "properties": {
-                                "ID": {
+                                "title": {
                                     "type": "string",
-                                    "example": "67ha98qog0qn"
+                                    "example": "A Divina Comédia"
+                                },
+                                "author": {
+                                    "type": "string",
+                                    "example": "Dante"
+                                },
+                                "year": {
+                                    "type": "integer",
+                                    "example": 1321
+                                },
+                                "genre": {
+                                    "type": "string",
+                                    "example": "poesia"
                                 }
-                            }   
-                        } 
+                            }
+                        }
                     }
                 ],
-                "response": {
+                "responses": {
                     "201": {
-                        "description":"Livro adicionado com sucesso!" 
+                        "description": "Livro atualizado com sucesso"
+                    },
+                    "404": {
+                        "description": "Livro não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro ao atualizar o livro"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deleta um livro da biblioteca",
+                "description": "Apaga um livro escolhido da biblioteca através de uma sequência de letras e números que serão chamados de seu ID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID do livro que será deletado",
+                        "required": true,
+                        "type": "string",
+                        "example": "68b628788cf2ccd91071c38c"
+                    }
+                ],
+                "responses": {
+                    "404": {
+                        "description":"Livro não encontrado" 
+                    },
+                    "201": {
+                        "description": "Livro excluído com sucesso"
                     },
                     "500":{
-                        "description": "Erro ao adicionar livro"
+                        "description": "Erro ao tentar excluir o livro"
 
                     }
                 }
