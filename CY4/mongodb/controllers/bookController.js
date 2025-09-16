@@ -20,8 +20,19 @@ const getBooks = async (req, res) => {
         if (req.query.author) {
             query.author = req.query.author;
         }
+
+        let sort = {};
+        if (req.query.sortBy){
+            const sortField = req.query.sortBy;
+            const sortOrder = req.query.order === 'desc' ? -1 : 1;
+            sort[sortField] = sortOrder;
+        }
+
+        const pageNumber = parseInt(req.query.pageNumber) || 1;
+        const pageSize = parseInt(req.query.pageSize) || 5;
+        const skip = (pageNumber - 1) * pageSize;
         
-        const books = await Book.find(query);
+        const books = await Book.find(query).sort(sort).skip(skip).limit(pageSize);
         // if (!book) {
         //     return res.status(404).json({error: "Livro não encontrado"});
         // }
