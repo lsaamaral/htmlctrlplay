@@ -1,0 +1,22 @@
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    email: 'user@example.com', 
+    password: '123456'
+}
+
+# GET http://localhost:3000/api/books/686c503f590df3279672cf8e
+
+# PATCH http://localhost:3000/api/books/686c503f590df3279672cf8e
+# Content-Type: application/json
+
+# {
+#   "title": "avfgbfgbgfdv",
+#   "author": "dante",
+#   "year": 1321,
+#   "genre": "poesia"
+# }
+
+# DELETE  http://localhost:3000/api/books/689a6ed124f9a18eba20096f
+# Content-Type: application/json
