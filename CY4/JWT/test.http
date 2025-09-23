@@ -1,22 +1,20 @@
-POST http://localhost:3000/api/login
-Content-Type: application/json
-
-{
-    email: 'user@example.com', 
-    password: '123456'
-}
-
-# GET http://localhost:3000/api/books/686c503f590df3279672cf8e
-
-# PATCH http://localhost:3000/api/books/686c503f590df3279672cf8e
+# POST http://localhost:3000/api/login
 # Content-Type: application/json
 
 # {
-#   "title": "avfgbfgbgfdv",
-#   "author": "dante",
-#   "year": 1321,
-#   "genre": "poesia"
+#     "email": "usuario2@gmail.com",
+#     "password": "234324"
 # }
 
-# DELETE  http://localhost:3000/api/books/689a6ed124f9a18eba20096f
-# Content-Type: application/json
+# GET http://localhost:3000/api/perfil
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXJAZXhhbXBsZS5jb20iLCJpYXQiOjE3NTgwNDg3MzksImV4cCI6MTc1ODA0ODc2OX0.n4SG0a3Ae-vpbevgwp2ubZuhJ1FvRpRcUXolSAeEqHE
+
+# GET http://localhost:3000/api/student
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8yQGdtYWlsLmNvbSIsInJvbGUiOiJzdHVkZW50IiwiaWF0IjoxNzU4NjQ5MDIyLCJleHAiOjE3NTg2NTI2MjJ9.ICQ9KoacClrMLcerew8z2930HDqR7ES-SRENqT1BD8I
+
+POST http://localhost:3000/api/refresh
+Content-Type: application/json
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzdWFyaW8yQGdtYWlsLmNvbSIsImlhdCI6MTc1ODY1MjQwNCwiZXhwIjoxNzU4NjUyNDM0fQ.A7ZrrDWRn7Db-S1LcwG1Hy4Jyx1JSv60Ual4AmDo0u4"
+}
