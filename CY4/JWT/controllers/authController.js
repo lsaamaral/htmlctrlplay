@@ -2,7 +2,8 @@ const jwt = require('jsonwebtoken');
 
 const users = [
     {email: 'user@example.com', password: '123456', role:"admin"},
-    {email: 'usuario2@gmail.com', password: '234324', role:"student"}
+    {email: 'usuario2@gmail.com', password: '234324', role:"student"},
+    {email: 'student@example.com', password: 'student123', role:"student"}
 ];
 
 let refreshTokens = [];
@@ -16,13 +17,15 @@ const login = (req, res) => {
         return res.status(401).json({error: "Informações de usuário inválidas"});
     }
 
-    const acess = jwt.sign({email: user.email, role: user.role}, 'secreta', {expiresIn: '1hr'});
+    const access = jwt.sign({email: user.email, role: user.role}, 'secreta', {expiresIn: '1hr'});
 
     const refresh = jwt.sign({email: user.email }, 'refresh_secreta', {expiresIn: '30s'});
 
     refreshTokens.push(refresh);
 
-    res.json({acess, refresh});
+    res.cookie('access', access, { httpOnly: true, secure: true, sameSite: 'Strict', maxAge: 3600000 });
+
+    res.status(200).json({access, refresh});
 };
 
 const refresh = (req, res) => {
@@ -43,9 +46,9 @@ const refresh = (req, res) => {
         const newRefreshToken = jwt.sign({email: decoded.email }, 'refresh_secreta', {expiresIn: '7d'});
         refreshTokens.push(newRefreshToken);
 
-        const newAcessToken = jwt.sign({email: decoded.email}, 'secreta', {expiresIn: "15m"});
+        const newAccessToken = jwt.sign({email: decoded.email}, 'secreta', {expiresIn: "15m"});
 
-        res.json({acess: newAcessToken, refresh: newRefreshToken});
+        res.json({access: newAccessToken, refresh: newRefreshToken});
     } catch (error) {
         return res.status(403).json({error: "Token inválido"})
     }

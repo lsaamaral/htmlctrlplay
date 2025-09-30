@@ -1,0 +1,74 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API com Autenticação",
+        "version":"1.0.0",
+        "description": "Utilizando autenticação JWT em uma api de controle de acesso estudantil"
+    },
+    "components": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerformat": "JWT"
+            }
+        }
+    },
+    "security": [
+        {
+        "bearerAuth": []
+        }
+    ],
+    "paths": {
+        "/api/login": {
+            "post": {
+                "summary": "Autenticação de usuário",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Login feito com sucesso"
+                    },
+                    "401": {
+                        "description": "Credenciais invalidas"
+                    }
+                }
+            }
+        },
+        "/api/student": {
+            "get": {
+                "summary": "Acesso para estudantes",
+                "security": [{ "bearerAuth": [] }],
+                "responses": {
+                    "403": {
+                        "description": "Acesso proibido"
+                    },
+                    "401": {
+                        "description": "Acesso negado, sem token"
+                    },
+                    "200": {
+                        "description": "Acesso liberado"
+                    }
+                }
+            }
+        }
+    }
+
+
+}
