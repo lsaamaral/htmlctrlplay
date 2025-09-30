@@ -30,5 +30,9 @@ app.get("/api/student", rolesMiddleware.authorize(['student', 'admin']), (req, r
     res.json({mensagem: `Bem-vindo(a), ${req.user.email}!`});
 });
 
+app.get("/api/teacher", rolesMiddleware.authorize(['teacher', 'admin']), (req, res)=> {
+    res.json({mensagem: `Bem-vindo(a), professor ${req.user.email}!`});
+});
+
 app.listen(3000, () => console.log("Server running on port 3000"));
 

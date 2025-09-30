@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 const users = [
     {email: 'user@example.com', password: '123456', role:"admin"},
     {email: 'usuario2@gmail.com', password: '234324', role:"student"},
-    {email: 'student@example.com', password: 'student123', role:"student"}
+    {email: 'student@example.com', password: 'student123', role:"student"},
+    {email: 'teacher@example.com', password: 'teacher123', role:"teacher"}
 ];
 
 let refreshTokens = [];

@@ -7,10 +7,10 @@
     },
     "components": {
         "securitySchemes": {
-            "bearerAuth": {
-                "type": "http",
-                "scheme": "bearer",
-                "bearerformat": "JWT"
+            "cookieAuth": {
+                "type": "apiKey",
+                "in": "cookie",
+                "name": "access"
             }
         }
     },
@@ -54,7 +54,7 @@
         "/api/student": {
             "get": {
                 "summary": "Acesso para estudantes",
-                "security": [{ "bearerAuth": [] }],
+                "security": [{ "cookieAuth": [] }],
                 "responses": {
                     "403": {
                         "description": "Acesso proibido"
@@ -67,8 +67,23 @@
                     }
                 }
             }
+        },
+        "/api/teacher": {
+            "get": {
+                "summary": "Acesso para professores",
+                "security": [{ "cookieAuth": [] }],
+                "responses": {
+                    "403": {
+                        "description": "Acesso proibido"
+                    },
+                    "401": {
+                        "description": "Acesso negado, sem token"
+                    },
+                    "200": {
+                        "description": "Acesso liberado para o professor"
+                    }
+                }
+            }
         }
     }
-
-
 }
