@@ -1,4 +1,3 @@
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import PokemonList from './pages/pokemonList';
 import PokemonForm from '../components/pokemonForm';
